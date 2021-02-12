@@ -23,7 +23,7 @@ router.post('/register', validateRegistration, (req, res) => {
     });
 });
 
-router.post('/login', (req, res) => {
+router.post('/login', validateLogin, (req, res) => {
   let { email, password } = req.body;
 
   Users.findBy({ email })
